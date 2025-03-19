@@ -1,0 +1,101 @@
+/* Base styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent zoom */
+html {
+    touch-action: manipulation;
+}
+
+/* Font styles */
+.font-geist-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing: -0.03em;
+}
+
+/* Custom animations */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 183, 197, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 183, 197, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 183, 197, 0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Brush animation styles */
+#brush-container {
+    animation: float 5s ease-in-out infinite;
+}
+
+.brush-body {
+    background: linear-gradient(180deg, #FFB7C5 0%, #FFC8D2 100%);
+    box-shadow: 0 10px 25px -5px rgba(255, 183, 197, 0.25);
+}
+
+.brush-head {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Sakura background animation */
+.sakura-bg {
+    animation: spin 240s linear infinite;
+    opacity: 0.1;
+}
+
+/* Card hover effects */
+.rounded-xl {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rounded-xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+button {
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Fill for Lucide star icons */
+[data-lucide="star"].fill-current path {
+    fill: currentColor;
+    stroke: currentColor;
+}
